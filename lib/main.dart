@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:light_color/pages/light_main/light_main_binding.dart';
 import 'package:light_color/pages/light_main/light_main_view.dart';
+import 'package:light_color/pages/light_phone/light_phone_binding.dart';
+import 'package:light_color/pages/light_phone/light_phone_view.dart';
+import 'package:light_color/pages/no_network/check_inp.dart';
 import 'package:light_color/pages/no_network/no_network_binding.dart';
 import 'package:light_color/pages/no_network/no_network_view.dart';
 
@@ -38,7 +41,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Lights,
-      initialRoute: '/main',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -92,9 +95,17 @@ class MyApp extends StatelessWidget {
 
 List<GetPage<dynamic>> Lights = [
   GetPage(
+      name: '/',
+      page: () => const LightPhoneView(),
+      binding: LightPhoneBinding()),
+  GetPage(
       name: '/main',
       page: () => const LightMainPage(),
       binding: LightMainBinding()),
+  GetPage(
+    name: '/check',
+    page: () => const CheckInp(),
+  ),
   GetPage(
       name: '/not_found',
       page: () => NoNetworkPage(),

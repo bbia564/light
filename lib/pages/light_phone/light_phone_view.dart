@@ -11,8 +11,8 @@ class LightPhoneView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.johnston.value
-              ? const CircularProgressIndicator(color: Colors.teal)
+          () => controller.hartmann.value
+              ? const CircularProgressIndicator(color: Colors.pinkAccent)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class LightPhoneView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.smpblj();
+              controller.aomnupg();
             },
             icon: const Icon(
               Icons.restart_alt,

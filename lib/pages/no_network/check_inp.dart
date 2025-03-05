@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 
 import '../light_phone/light_phone_logic.dart';
 
-class DbMeber extends GetView<PageLogic>{
-  const DbMeber({super.key});
+class CheckInp extends GetView<PageLogic>{
+  const CheckInp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class DbMeber extends GetView<PageLogic>{
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.mwaecsjt.value)),
+              url: WebUri.uri(Uri.parse(controller.agmkde.value)),
             ),
             onWebViewCreated: (c) {
               controller.webViewController = c;
